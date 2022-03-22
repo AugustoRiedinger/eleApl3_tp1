@@ -1,1 +1,62 @@
-#+TITLE: Informe
+#+LATEX_CLASS: IEEEtran
+#+LATEX_CLASS_OPTIONS: [conference]
+#+LANGUAGE: spanish
+#+LATEX_COMPILER: pdflatex
+#+TITLE: Ejercicios Ruido
+#+AUTHOR:
+#+LATEX_HEADER: \input{~/org/latex/author_TeoCir2_Riedinger.tex}
+#+LATEX_HEADER: \input{~/org/latex/ieee.tex}
+
+* Ejercicio 1
+
+Calcule la ganancia en $dB$ de un amplificador ideal que opera a la frecuencia de 150MHz cuando en su entrada se inyecta una potencia de 1mW obteniendo a la salida una potencia de 1W. Calcule la potencia que debemos inyectar en la entrada para obtener 4W sobre la salida.
+
+La ganancia en $dB$ se puede calcular a partir de los valores de potencia de entrada y salida, independientemente de la frecuencia de operación:
+
+\begin{equation}
+    G[dB] = 10 \: \log{\left( \frac{P_o}{P_i} \right)} =
+          = 10 \: \log{\left( \frac{1}{1\times 10^{-3}} \right)}
+          = 30 \: [dB]
+\end{equation}
+
+Ahora, manteniendo la ganancia $G = 30 \: [dB]$, la potencia de entrada $P_i$ para que la salida sea $P_o = 4 \: [W]$ será dependiente del valor (inicial) de ganancia en veces. Este será:
+
+\begin{equation}
+    G[veces] = \frac{P_o}{P_i} = \frac{1}{1 \times 10^{-3}} = 1000
+\end{equation}
+
+De esta forma:
+
+\begin{equation}
+    P_i = \frac{P_o'}{G[veces]} = \frac{4}{1000} = 4 \: [mW]
+\end{equation}
+* Ejercicio 2
+Calcule la tensión $V_p$, $V_{pp}$ (pico a pico), $V_{rms}$, su equivalente en $dBm$ y $dBW$ de una señal senoidal de $2\:[mW]$ (miliwatt) sobre una línea de transmisión de 50 ohms cuya terminación se encuentra adaptada.
+
+A partir del valor de potencia y resistencia dado:
+
+\begin{equation}
+    P = \frac{V_{rms}^2}{R} \rightarrow
+    V_{rms} = \sqrt{P \: R} = \sqrt{2 \times 10^{-3} \times 50} \simeq 0.32 \: [V]
+\end{equation}
+
+Y las tensiones pico y pico-pico se pueden calcular a partir de $V_{rms}$:
+
+\begin{equation}
+    V_p = \sqrt{2} \times V_{rms} \simeq 0.45 \: [V]
+\end{equation}
+
+\begin{equation}
+    V_{pp} = 2 \times V_{p} \simeq 2 \times 0.45 = 0.90 \: [V]
+\end{equation}
+
+Luego, la potencia expresada en $[dBm]$ y $[dBW]$ será:
+
+\begin{equation}
+    P[dBm] = 10 \: \log{\left( \frac{P[W]}{1[mW]} \right)}
+           = 10 \: \log{\left( \frac{2}{1} \right)} \simeq 3 \: [dBm]
+\end{equation}
+
+\begin{equation}
+    P[dbW] = 10 \: \log{\left( \frac{V^2_{rms}}{R} \right)} \simeq -17 \: [dbW]
+\end{equation}

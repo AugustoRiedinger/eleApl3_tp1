@@ -1,0 +1,66 @@
+% Created 2022-03-22 mar 14:57
+% Intended LaTeX compiler: pdflatex
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\input{~/org/latex/author_TeoCir2_Riedinger.tex}
+\input{~/org/latex/ieee.tex}
+\date{\today}
+\title{Ejercicios Ruido}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Ejercicios Ruido},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.6)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Ejercicio 1}
+\label{sec:org8b4a3b6}
+
+Calcule la ganancia en \(dB\) de un amplificador ideal que opera a la frecuencia de 150MHz cuando en su entrada se inyecta una potencia de 1mW obteniendo a la salida una potencia de 1W. Calcule la potencia que debemos inyectar en la entrada para obtener 4W sobre la salida.
+
+La ganancia en \(dB\) se puede calcular a partir de los valores de potencia de entrada y salida, independientemente de la frecuencia de operación:
+
+\begin{equation}
+    G[dB] = 10 \: \log{\left( \frac{P_o}{P_i} \right)} =
+          = 10 \: \log{\left( \frac{1}{1\times 10^{-3}} \right)}
+          = 30 \: [dB]
+\end{equation}
+
+Ahora, manteniendo la ganancia \(G = 30 \: [dB]\), la potencia de entrada \(P_i\) para que la salida sea \(P_o = 4 \: [W]\) será dependiente del valor (inicial) de ganancia en veces. Este será:
+
+\begin{equation}
+    G[veces] = \frac{P_o}{P_i} = \frac{1}{1 \times 10^{-3}} = 1000
+\end{equation}
+
+De esta forma:
+
+\begin{equation}
+    P_i = \frac{P_o'}{G[veces]} = \frac{4}{1000} = 4 \: [mW]
+\end{equation}
+\section{Ejercicio 2}
+\label{sec:orgcb6dd78}
+Calcule la tensión \(V_p\), \(V_{pp}\) (pico a pico), \(V_{rms}\), su equivalente en \(dBm\) y \(dBW\) de una señal senoidal de \(2\:[mW]\) (miliwatt) sobre una línea de transmisión de 50 ohms cuya terminación se encuentra adaptada.
+
+A partir del valor de potencia y resistencia dado:
+
+\begin{equation}
+    P = \frac{V_{rms}^2}{R} \rightarrow
+    V_{rms} = \sqrt{P \: R} = \sqrt{2\times 50} =
+\end{equation}
+\end{document}
