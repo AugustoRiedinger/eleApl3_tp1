@@ -60,3 +60,124 @@ Luego, la potencia expresada en $[dBm]$ y $[dBW]$ será:
 \begin{equation}
     P[dbW] = 10 \: \log{\left( \frac{V^2_{rms}}{R} \right)} \simeq -17 \: [dbW]
 \end{equation}
+* Ejercicio 3
+Calcule la tensión $V_p$, $V_{pp}$ (pico a pico), $V_{rms}$, su equivalente en $dBm$ y $dBW$ de una señal senoidal cuya tensión es de $0.707\: [V_{rms}]$ sobre una línea de transmisión de $R = 50 \: [\Omega]$ cuya terminación se encuentra adaptada.
+
+Los voltajes pico y pico-pico se pueden calcular a partir del voltaje RMS:
+
+\begin{equation}
+    V_p = \sqrt{2} \: V_{rms} = \sqrt{2} \times 0.707 \simeq 1 \: [V]
+\end{equation}
+
+\begin{equation}
+    V_{pp} = 2 \times V_{p} \simeq 2 \times 1 = 2 \: [V]
+\end{equation}
+
+Luego, la potencia será entonces:
+
+\begin{equation}
+    P = \frac{V_{rms}^2}{R} = \frac{0.707^2}{50} \simeq 10 \: [mW]
+\end{equation}
+
+
+Y, expresada en $[dBm]$ y $[dBW]$ será:
+
+\begin{equation}
+    P[dBm] = 10 \: \log{\left( \frac{P[W]}{1[mW]} \right)}
+           \simeq 10 \: \log{\left( \frac{10}{1} \right)} = 10 \: [dBm]
+\end{equation}
+
+\begin{equation}
+    P[dbW] = 10 \: \log{\left( \frac{V^2_{rms}}{R} \right)} \simeq -20 \: [dbW]
+\end{equation}
+* Ejercicio 4
+Considere una cadena de cuatro etapas donde la primera está constituida por un filtro que introduce una atenuación $A1$ de $2\:[dB]$ seguido por un amplificador de ganancia $G2$ a calcular, la tercera etapa consta de un filtro cuya atenuación es $A3$ de $5\:[dB]$ y por ultimo un amplificador de ganancia $G4 = 20 \: [dB]$.
+
+Considerando que en la cadena las impedancias entre etapas se encuentran adaptadas, calcule la ganancia de la etapa $G2$ de tal forma de obtener una potencia de salida $P_o = -40\: [dBm]$ teniendo en la entrada una tensión de $70 \: \mu V_{rms}$ sobre una impedancia de $50 \: [\Omega]$.
+
+Teniendo el voltaje de entrada sobre una impedancia dada, podemos calcular la potencia de entrada según:
+
+\begin{equation}
+    P_i = \frac{V_{rms}^2}{R} = \frac{(70 \times 10^{-6})^2}{50} = 9.8 \times 10^{-8} \: [mW]
+\end{equation}
+
+\begin{equation}
+    P_i[dBm] = 10 \: \log{\left( \frac{P[W]}{1[mW]} \right)}
+           \simeq 10 \: \log{\left( \frac{9.8 \times 10^{-8}}{1} \right)} \simeq -70 \: [dBm]
+\end{equation}
+
+Entonces, considerando todas las etapas:
+
+\begin{equation}
+    P_o[dBm] - P_i[dBm] = - A1[dB] - A2[dB] + G1[dB] + G2[dB]
+\end{equation}
+
+\begin{equation}
+    G2[dB] = - A1[dB] - A2[dB] + G1[dB] - P_o[dBm] + P_i[dBm]
+           = - 2 - 5 + 20 - 40 + 70 = 43 \: [dB]
+\end{equation}
+* Ejercicio 5
+ Considere un amplificador $G1$ de ganancia $13\:[dB]$, ideal (sin ruido) en un ambiente donde la temperatura es de $290\:[K]$, cuya impedancia de entrada $Z_i$ y salida $Z_o$ son de $50\:[\Omega]$ y cuyo ancho de banda está definido en $1\:[MHz]$. Considerando una señal cuya potencia de entrada $P_i = -90 \: [dBm$ calcule la potencia de ruido en la entrada $N_i$ y su relación señal/ruido de entrada expresada en $dB$. En la salida calcule la potencia de la señal $P_o$, la potencia de ruido $N_o$ y la relación señal/ruido en la salida expresada en $dB$. Calcule el factor de ruido $F$ del amplificador y su figura de ruido $NF$.
+
+La potencia de ruido $N_i$ en la entrada va a depender de la temperatura $T$ y de la frecuencia de operación $f$:
+
+\begin{equation}
+    N_i = T \: f = 1.381 \ times 10^{-23} \times 290 \times 1 \times 10^6 \simeq 4 \times 10^{-12} \: [mW]
+\end{equation}
+
+\begin{equation}
+    N_i[dBm] = 10 \: \log{\left( \frac{P[W]}{1[mW]} \right)}
+           \simeq 10 \: \log{\left( \frac{4 \times 10^{-12}}{1} \right)} \simeq -114 \: [dBm]
+\end{equation}
+
+Por tanto, podemos calcular la relación señal/ruido de entrada en base a las potencias:
+
+\begin{equation}
+    SN_i[dBm] = P_i[dBm] - N_i[dBm] = - 90  + 117 = 27 \: [dBm]
+\end{equation}
+
+Ahora, las potencias en la salida estarán dadas según:
+
+\begin{equation}
+    P_o[dBm] = G1[dBm] + P_i[dBm] = 13 - 90 = -77 \: [dBm]
+\end{equation}
+
+\begin{equation}
+    N_o[dBm] = G1[dBm] + N_i[dBm] = 13 - 114 = -101 \: [dBm]
+\end{equation}
+
+Y por tanto la relación señal/ruido de la salida será:
+
+\begin{equation}
+    SN_o[dBm] = P_o - N_o = -77 + 101 = 24 \: [dBm]
+\end{equation}
+
+Y el factor y cifra de ruido estarán definidos entonces como:
+
+\begin{equation}
+    NF[dBm] = SN_i[dBm] - SN_o[dBm] = 27 - 24 = 3 \: [dBm]
+\end{equation}
+
+\begin{equation}
+    NF = 10^{\frac{NF[dBm]}{10}} = 10 ^{\frac{3}{10}} \simeq 2
+\end{equation}
+* Ejercicio 6
+ Considere un amplificador con ganancia $G1 = 13\:[dB]$ y una figura de ruido $NF = 3 \: [dB]$, el mismo se encuentra adaptado en $50 \: [\Omega]$ tanto en la entrada como en la salida. Considerando los siguientes parámetros calcule la relación señal/ruido en la entrada, la potencia de señal en la salida y la potencia de ruido en la salida; por último calcule la relación señal/ruido en la salida y obtenga una conclusión de esta respecto a la obtenida en la entrada. Con los datos obtenidos calcule el factor de ruido del amplificador.
+
+ Datos: $N_i = 4 \times 10^{-15} \: [W] = -114 \: [dBm]$; $P_i = -90 \: [dBm] = 1 \times 10^{-12} \: [W]$.
+
+Con los dato de potencia y potencia de ruido en la entrada, podemos calcular la relación señal/ruido en la entrada:
+
+\begin{equation}
+    SNR_i[dBm] = P_i - N_i = -90 + 114 = 24 \: [dBm]
+\end{equation}
+
+Luego, a partir del valor de $G1$, podemos calcular las potencias de salida:
+
+\begin{equation}
+    P_o[dBm] = G1[dB] + P_i[dBm] = 13 - 90 = -77 \: [dBm]
+\end{equation}
+
+\begin{equation}
+    N_o[dBm] = G1 + N_i + NF = 13 - 114 + 3 = -98 \: [dBm]
+\end{equation}
